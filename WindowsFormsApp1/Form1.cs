@@ -18,35 +18,50 @@ namespace WindowsFormsApp1
             pictureBox1.MouseClick += new MouseEventHandler(Image1_Clicked);
             button1.MouseClick += new MouseEventHandler(ShopClick);
             button2.MouseClick += new MouseEventHandler(upgrade);
+            button3.MouseClick += new MouseEventHandler(bot);
+
+            Timer refreshTime = new Timer();
+            refreshTime.Tick += new EventHandler(showscore);
+            refreshTime.Interval = 1;
+            refreshTime.Start();
         }
-        
+        private void showscore(object sender, EventArgs e) {
+            
+            if (score < 1000000)
+            {
+                scoreToDisplay = score;
+                endings = "";
+            }
+            if (1000000 <= score && score < 1000000000)
+            {
+                scoreToDisplay = Math.Round((score / 1000000), 5);
+
+                endings = "Million";
+            }
+            if (1000000000 <= score && score < 1000000000000)
+            {
+                scoreToDisplay = Math.Round((score / 1000000000), 5);
+
+                endings = "Billion";
+            }
+
+            label2.Text = "" + scoreToDisplay + endings + "";
+        }
         private int picture = 0;
         private double score = 999997;
         private double scoreToDisplay;
         private string endings;
+        private double upgradeScore = 1;
         private void Image1_Clicked(object sender, MouseEventArgs e) {
            
                 picture = picture + 1;
-                score = score + 1;
-            if (score < 1000000) {
-                scoreToDisplay = score;
-                endings = "";
-            }
-            if (1000000 <= score && score < 1000000000) {
-                scoreToDisplay = Math.Round((score / 1000000), 5);
-               
-                endings = "Million";
-            }
-            if (1000000000 <= score && score < 1000000000000) {
-                scoreToDisplay = Math.Round((score / 1000000000), 5);
-               
-                endings = "Billion";
-            }
+                score = score + upgradeScore;
+           
                 if (picture >= 6) {
                     picture = 0;
                 }
                 
-                label2.Text = "" + scoreToDisplay + endings + "";
+                
                 switch (picture)
                 {
                     case 0:
@@ -77,9 +92,41 @@ namespace WindowsFormsApp1
             button2.Visible = true;
             button2.Enabled = true;
             label3.Visible = true;
+            button3.Visible = true;
+            button3.Enabled = true;
+            label4.Visible = true;
         }
         private void upgrade(object sender, MouseEventArgs e) {
+            if (score >= 10) {
+                score = score - 10;
+                upgradeScore = 5;
+                shopDisable();
+            }
+        }
+        static Timer timerBot1 = new Timer();
+        private bool botOn;
 
+        private void bot(object sender, MouseEventArgs e) {
+            if (score >= 100) {
+                score = score - 100;
+                botOn = true;
+                timerBot1.Tick += new EventHandler(botRun);
+                timerBot1.Interval = 5000;
+                timerBot1.Start();
+                shopDisable();
+            }
+        }
+        private void botRun(object sender, EventArgs e) {
+            score = score + 10;
+        }
+        private void shopDisable() {
+            pictureBox1.Enabled = true;
+            button2.Visible = false;
+            button2.Enabled = false;
+            label3.Visible = false;
+            button3.Visible = false;
+            button3.Enabled = false;
+            label4.Visible = false;
         }
     }
 }
