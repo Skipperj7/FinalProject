@@ -1,3 +1,3 @@
 # FinalProject
-#Jacob Cunningham and Rafe Gerson
-#Period 5
+Jacob Cunningham and Rafe Gerson
+Period 5
