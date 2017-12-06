@@ -86,8 +86,10 @@ namespace WindowsFormsApp1
                 
                 }
         }
-
+        private bool shopEnabled;
         private void ShopClick(object sender, MouseEventArgs e) {
+            shopDisable();
+            shopEnabled = true;
             pictureBox1.Enabled = false;
             button2.Visible = true;
             button2.Enabled = true;
@@ -96,37 +98,48 @@ namespace WindowsFormsApp1
             button3.Enabled = true;
             label4.Visible = true;
         }
+        private bool upgradeBought;
         private void upgrade(object sender, MouseEventArgs e) {
             if (score >= 10) {
-                score = score - 10;
-                upgradeScore = 5;
-                shopDisable();
+                
+                    score = score - 10;
+                    upgradeScore = 5;
+                button2.Visible = false;
+                button2.Enabled = false;
+                label3.Visible = false;
             }
         }
         static Timer timerBot1 = new Timer();
         private bool botOn;
-
+        private bool botBought;
         private void bot(object sender, MouseEventArgs e) {
             if (score >= 100) {
-                score = score - 100;
-                botOn = true;
-                timerBot1.Tick += new EventHandler(botRun);
-                timerBot1.Interval = 5000;
-                timerBot1.Start();
-                shopDisable();
+                
+                    score = score - 100;
+                    botOn = true;
+                    timerBot1.Tick += new EventHandler(botRun);
+                    timerBot1.Interval = 5000;
+                    timerBot1.Start();
+                button3.Visible = false;
+                button3.Enabled = false;
+                label4.Visible = false;
             }
         }
         private void botRun(object sender, EventArgs e) {
             score = score + 10;
         }
         private void shopDisable() {
-            pictureBox1.Enabled = true;
-            button2.Visible = false;
-            button2.Enabled = false;
-            label3.Visible = false;
-            button3.Visible = false;
-            button3.Enabled = false;
-            label4.Visible = false;
+            if (shopEnabled)
+            {
+                shopEnabled = false;
+                pictureBox1.Enabled = true;
+                button2.Visible = false;
+                button2.Enabled = false;
+                label3.Visible = false;
+                button3.Visible = false;
+                button3.Enabled = false;
+                label4.Visible = false;
+            }
         }
     }
 }
