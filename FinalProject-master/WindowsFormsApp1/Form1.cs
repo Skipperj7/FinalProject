@@ -50,8 +50,9 @@ namespace WindowsFormsApp1
             button12.MouseClick += new MouseEventHandler(purplePick);
 
             button19.MouseClick += new MouseEventHandler(saveImage);
-
+            button20.MouseClick += new MouseEventHandler(loadImage);
              g = pictureBox2.CreateGraphics();
+            
         }
         
         private void showscore(object sender, EventArgs e)
@@ -78,7 +79,7 @@ namespace WindowsFormsApp1
             label2.Text = "" + scoreToDisplay + endings + "";
         }
         private int picture = 0;
-        private double score = 999997;
+        private double score = 0;
         private double scoreToDisplay;
         private string endings;
         private double upgradeScore = 1;
@@ -122,9 +123,28 @@ namespace WindowsFormsApp1
             }
         }
         Graphics g;
-        
+        Bitmap saved;
+        Bitmap load;
         private void saveImage(object sender, MouseEventArgs e) {
-            
+            saved = new Bitmap(pictureBox2.Width, pictureBox2.Height, g);
+            try
+            {
+                saved.Save("c:\\BitCoinImage.png", System.Drawing.Imaging.ImageFormat.Png);
+                MessageBox.Show("Saved");
+            }
+            catch (Exception) {
+                MessageBox.Show("There was a problem saving! Check file permissions.");
+            }
+        }
+        private void loadImage(object sender, MouseEventArgs e) {
+            try
+            {
+                load = new Bitmap("c:\\BitCoinImage.png");
+                pictureBox2.Image = load;
+            }
+            catch (Exception) {
+                MessageBox.Show("File was not loaded correctly or does not exsit.");
+            }
         }
         SolidBrush brush;
         private bool draw;
@@ -132,7 +152,8 @@ namespace WindowsFormsApp1
 
         private void pictureBox2_MouseDown(object sender, MouseEventArgs e)
         {
-
+            brush = new SolidBrush(colorBrush);
+            g.FillRectangle(brush, e.X, e.Y, 10, 10);
             draw = true;
 
         }
@@ -146,9 +167,9 @@ namespace WindowsFormsApp1
             if (draw)
             {
 
+
                 brush = new SolidBrush(colorBrush);
-                
-                g.FillEllipse(brush, e.X, e.Y, 10, 10);
+                g.FillRectangle(brush, e.X, e.Y, 10, 10);
 
             }
         }
@@ -360,11 +381,11 @@ namespace WindowsFormsApp1
         private bool upgradeOn;
         private void upgrade(object sender, MouseEventArgs e)
         {
-            if (score >= 10)
+            if (score >= 30)
             {
                 upgradeOn = true;
-                score = score - 10;
-                upgradeScore = 5;
+                score = score - 30;
+                upgradeScore = 2;
                 shopDisable();
             }
         }

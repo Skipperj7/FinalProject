@@ -65,3 +65,13 @@ C:\Users\Jacob\Documents\FinalProject-master\WindowsFormsApp1\obj\Debug\WindowsF
 C:\Users\Jacob\Documents\FinalProject-master\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.CoreCompileInputs.cache
 C:\Users\Jacob\Documents\FinalProject-master\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
 C:\Users\Jacob\Documents\FinalProject-master\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
+C:\Users\519-p5\Downloads\FinalProject-master\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe.config
+C:\Users\519-p5\Downloads\FinalProject-master\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe
+C:\Users\519-p5\Downloads\FinalProject-master\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.pdb
+C:\Users\519-p5\Downloads\FinalProject-master\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csprojResolveAssemblyReference.cache
+C:\Users\519-p5\Downloads\FinalProject-master\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Form1.resources
+C:\Users\519-p5\Downloads\FinalProject-master\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Properties.Resources.resources
+C:\Users\519-p5\Downloads\FinalProject-master\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.GenerateResource.Cache
+C:\Users\519-p5\Downloads\FinalProject-master\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.CoreCompileInputs.cache
+C:\Users\519-p5\Downloads\FinalProject-master\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
+C:\Users\519-p5\Downloads\FinalProject-master\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb

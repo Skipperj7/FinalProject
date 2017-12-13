@@ -73,9 +73,9 @@
             this.Points.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.Points.Location = new System.Drawing.Point(12, 9);
             this.Points.Name = "Points";
-            this.Points.Size = new System.Drawing.Size(154, 65);
+            this.Points.Size = new System.Drawing.Size(137, 65);
             this.Points.TabIndex = 1;
-            this.Points.Text = "Points:";
+            this.Points.Text = "Coins:";
             // 
             // label2
             // 
@@ -458,7 +458,7 @@
             this.Controls.Add(this.Points);
             this.Controls.Add(this.pictureBox1);
             this.Name = "Form1";
-            this.Text = "CookieClickerTestTitle";
+            this.Text = "BitCoin Miner";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
