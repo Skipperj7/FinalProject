@@ -12,7 +12,7 @@ namespace WindowsFormsApp1
 {
     public partial class Form1 : Form
     {
-        
+        private static Bitmap bCoin = Properties.Resources.bcoin;
         public Form1()
         {
             InitializeComponent();
@@ -52,9 +52,9 @@ namespace WindowsFormsApp1
             button19.MouseClick += new MouseEventHandler(saveImage);
             button20.MouseClick += new MouseEventHandler(loadImage);
              g = pictureBox2.CreateGraphics();
-            
+            gr = Graphics.FromImage(bCoin);
         }
-        
+        Graphics gr;
         private void showscore(object sender, EventArgs e)
         {
 
@@ -125,10 +125,10 @@ namespace WindowsFormsApp1
         Graphics g;
         Bitmap saved;
         Bitmap load;
-        static string user = "Jacob";
+        static string user = "519-p5";
         string outputFileName = @"C:\Users\" + user + @"\Pictures\BitCoinImage.png";
         private void saveImage(object sender, MouseEventArgs e) {
-            saved = new Bitmap(pictureBox2.Image, pictureBox2.Width, pictureBox2.Height);
+            saved = bCoin;
             if (File.Exists(outputFileName)) {
                 File.Delete(outputFileName);
             }
@@ -165,7 +165,9 @@ namespace WindowsFormsApp1
         private void pictureBox2_MouseDown(object sender, MouseEventArgs e)
         {
             brush = new SolidBrush(colorBrush);
+           
             g.FillRectangle(brush, e.X, e.Y, 10, 10);
+            gr.FillRectangle(brush, e.X, e.Y, 10, 10);
             draw = true;
 
         }
@@ -181,7 +183,9 @@ namespace WindowsFormsApp1
 
 
                 brush = new SolidBrush(colorBrush);
+               
                 g.FillRectangle(brush, e.X, e.Y, 10, 10);
+                gr.FillRectangle(brush, e.X, e.Y, 10, 10);
 
             }
         }
@@ -190,6 +194,7 @@ namespace WindowsFormsApp1
         {
             
             g.Clear(pictureBox2.BackColor);
+            gr.Clear(pictureBox2.BackColor);
             pictureBox2.Image = bitcoin;
         }
         private bool redOn;
