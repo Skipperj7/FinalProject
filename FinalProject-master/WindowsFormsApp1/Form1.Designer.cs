@@ -158,13 +158,14 @@
             // pictureBox2
             // 
             this.pictureBox2.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.pictureBox2.Enabled = false;
             this.pictureBox2.Image = global::WindowsFormsApp1.Properties.Resources.bcoin;
-            this.pictureBox2.Location = new System.Drawing.Point(3, 77);
+            this.pictureBox2.Location = new System.Drawing.Point(171, 77);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(163, 406);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.Size = new System.Drawing.Size(534, 544);
             this.pictureBox2.TabIndex = 8;
             this.pictureBox2.TabStop = false;
+            this.pictureBox2.Visible = false;
             // 
             // button4
             // 
@@ -413,14 +414,12 @@
             // 
             // button20
             // 
-            this.button20.Enabled = false;
-            this.button20.Location = new System.Drawing.Point(115, 489);
+            this.button20.Location = new System.Drawing.Point(23, 460);
             this.button20.Name = "button20";
-            this.button20.Size = new System.Drawing.Size(50, 23);
+            this.button20.Size = new System.Drawing.Size(76, 23);
             this.button20.TabIndex = 31;
-            this.button20.Text = "Load";
+            this.button20.Text = "Draw On/Off";
             this.button20.UseVisualStyleBackColor = true;
-            this.button20.Visible = false;
             // 
             // Form1
             // 

@@ -148,14 +148,17 @@ namespace WindowsFormsApp1
                 MessageBox.Show("There was a problem saving! Check file permissions.");
             }
         }
+        static bool on;
         private void loadImage(object sender, MouseEventArgs e) {
-            try
+            on = !on;
+            if (on)
             {
-                load = new Bitmap("c:\\BitCoinImage.png");
-                pictureBox2.Image = load;
+                pictureBox2.Enabled = true;
+                pictureBox2.Visible = true;
             }
-            catch (Exception) {
-                MessageBox.Show("File was not loaded correctly or does not exsit.");
+            else {
+                pictureBox2.Enabled = false;
+                pictureBox2.Visible = false;
             }
         }
         SolidBrush brush;
