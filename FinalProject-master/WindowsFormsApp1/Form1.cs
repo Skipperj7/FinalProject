@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using System.IO;
 namespace WindowsFormsApp1
 {
     public partial class Form1 : Form
@@ -125,12 +125,24 @@ namespace WindowsFormsApp1
         Graphics g;
         Bitmap saved;
         Bitmap load;
+        static string user = "Jacob";
+        string outputFileName = @"C:\Users\" + user + @"\Pictures\BitCoinImage.png";
         private void saveImage(object sender, MouseEventArgs e) {
-            saved = new Bitmap(pictureBox2.Width, pictureBox2.Height, g);
+            saved = new Bitmap(pictureBox2.Image, pictureBox2.Width, pictureBox2.Height);
+            if (File.Exists(outputFileName)) {
+                File.Delete(outputFileName);
+            }
             try
             {
-                saved.Save("c:\\BitCoinImage.png", System.Drawing.Imaging.ImageFormat.Png);
-                MessageBox.Show("Saved");
+                using (MemoryStream memory = new MemoryStream())
+                {
+                    using (FileStream fs = new FileStream(outputFileName, FileMode.Create, FileAccess.ReadWrite))
+                    {
+                        saved.Save(memory, System.Drawing.Imaging.ImageFormat.Png);
+                        byte[] bytes = memory.ToArray();
+                        fs.Write(bytes, 0, bytes.Length);
+                    }
+                }
             }
             catch (Exception) {
                 MessageBox.Show("There was a problem saving! Check file permissions.");
@@ -442,6 +454,10 @@ namespace WindowsFormsApp1
             }
         }
 
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

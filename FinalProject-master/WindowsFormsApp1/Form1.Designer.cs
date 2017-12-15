@@ -120,8 +120,9 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(25, 13);
             this.label3.TabIndex = 5;
-            this.label3.Text = "$10";
+            this.label3.Text = "$30";
             this.label3.Visible = false;
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // button3
             // 
@@ -412,12 +413,14 @@
             // 
             // button20
             // 
+            this.button20.Enabled = false;
             this.button20.Location = new System.Drawing.Point(115, 489);
             this.button20.Name = "button20";
             this.button20.Size = new System.Drawing.Size(50, 23);
             this.button20.TabIndex = 31;
             this.button20.Text = "Load";
             this.button20.UseVisualStyleBackColor = true;
+            this.button20.Visible = false;
             // 
             // Form1
             // 
