@@ -108,7 +108,7 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 4;
-            this.button2.Text = "Upgrade";
+            this.button2.Text = "Miner V2";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Visible = false;
             // 
@@ -130,7 +130,7 @@
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 23);
             this.button3.TabIndex = 6;
-            this.button3.Text = "Bot";
+            this.button3.Text = "Miner Bot";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Visible = false;
             // 
